@@ -20,7 +20,7 @@ const links = [
 		"./assets/icons/contact_support_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg",
 	],
 	[
-		"sponsors-and-partners",
+		"/sponsors-and-partners",
 		"Sponsors & partners",
 		"./assets/icons/handshake_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg",
 	],
