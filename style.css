@@ -3,6 +3,7 @@ html {
 	--white: #FFFBFF;
 	--yellow: #FFBE02;
 	--green: #27A662;
+	--grey: #F5F5F5;
 
 	--box-shadow-colour: #22222222;
 
@@ -36,6 +37,10 @@ nav {
 }
 nav, nav * {
 	z-index: 2;
+}
+
+a {
+	color: var(--green);
 }
 
 @media (width > 750px) {
@@ -118,13 +123,12 @@ nav, nav * {
 
 section {
 	padding: var(--base-horizontal-padding);
-	border-top: calc(var(--border-thickness) * 1.5) solid var(--yellow);
+	border-bottom: calc(var(--border-thickness) * 1.5) solid var(--yellow);
 }
 
 /* #region h1 */
 #h1-section {
 	background: linear-gradient(135deg,rgba(255, 190, 2, 0.5) 0%, rgba(255, 251, 255, 1) 40%, rgba(255, 251, 255, 1) 60%, rgba(39, 166, 98, 0.5) 100%);
-	border-top: none;
 	padding-top: 0;
 
 	text-align: center;

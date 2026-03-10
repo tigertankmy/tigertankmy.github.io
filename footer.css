@@ -1,0 +1,63 @@
+footer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: var(--base-vertical-padding) var(--base-horizontal-padding);
+	background-color: var(--grey);
+	color: var(--black);
+	
+	@media (width < 1110px) {
+		display: block;
+	}
+}
+
+.footer-heading {
+	display: block;
+	margin: 1rem 0;
+	text-transform: uppercase;
+	font-family: Montserrat;
+	font-weight: 500;
+}
+.organisation-logo > .text-logo-first-letter {
+	font-family: Gelasio;
+	font-size: 1.4rem;
+}
+.organisation-logo > .text-logo-after-first-letter {
+	font-weight: 900;
+}
+.organisation-logo > .text-logo-malaysia {
+	font-weight: 500;
+}
+.organisation-logo::after {
+	/* add logo here */
+}
+
+address {
+	font-style: normal;
+}
+address dl {
+	margin: 0;
+}
+address dd {
+	margin: 0;
+}
+address dd ul {
+	padding: 0;
+	list-style-type: none;
+}
+#social-media-list {
+	display: flex;
+	justify-content: space-between;
+}
+[data-icon="instagram"] {
+	content: url("./assets/icons/brands/Instagram_Glyph_Black.svg");
+	width: 2rem;
+}
+[data-icon="tiktok"] {
+	content: url("./assets/icons/brands/Tiktok_icon.svg");
+	width: 2rem;
+}
+[data-icon="linkedin"] {
+	content: url("./assets/icons/brands/InBug-Black.png");
+	width: 2rem;
+}
