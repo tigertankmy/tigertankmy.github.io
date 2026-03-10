@@ -17,17 +17,6 @@ html {
 	html {
 		--base-width: 18vw;
 	}
-	.nav-link-anchor-text {
-		display: none;
-	}
-	.nav-link-icon {
-		display: block;
-	}
-}
-@media (width > 750px) {
-	.nav-link-icon {
-		display: none;
-	}
 }
 
 body {
@@ -48,29 +37,65 @@ nav {
 nav, nav * {
 	z-index: 2;
 }
-nav ul {
-	display: flex;
-	justify-content: space-between;
-	margin: 0;
-	padding: calc(var(--base-vertical-padding) * 0.67) var(--base-horizontal-padding);
-	list-style-type: none;
-}
-nav ul li {
-	display: inline-block;
-}
-nav ul li a {
-	padding: calc(var(--base-width) * 0.0625);
-	font-size: calc(var(--base-font-size) * 1);
-	color: var(--black);
-	text-decoration: underline;
-	text-decoration: underline solid calc(var(--border-thickness) * 2) var(--yellow);
-	transition-duration: 400ms;
 
-	text-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+@media (width > 750px) {
+	#button-dropdown-navbar-toggle {
+		display: none;
+	}
+	nav ul {
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+		padding: calc(var(--base-vertical-padding) * 0.67) var(--base-horizontal-padding);
+		list-style-type: none;
+	}
+	nav ul li {
+		display: inline-block;
+	}
+	nav ul li a {
+		padding: calc(var(--base-width) * 0.0625);
+		font-size: calc(var(--base-font-size) * 1);
+		color: var(--black);
+		text-decoration: underline solid calc(var(--border-thickness) * 2) var(--yellow);
+		transition-duration: 400ms;
+
+		text-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+	}
+	nav ul li a:hover {
+		background-color: var(--black);
+		color: var(--white);
+	}
 }
-nav ul li a:hover {
-	background-color: var(--black);
-	color: var(--white);
+@media (width <= 750px) {
+	#button-dropdown-navbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: var(--base-horizontal-padding);
+		border: none;
+
+		font-size: 1rem;
+		font-family: Gelasio;
+
+		background-color: var(--white);
+	}
+	nav ul {
+		display: none;
+		margin: 0;
+		padding: 0;
+		background-color: var(--yellow);
+		list-style-type: none;
+	}
+	nav ul li.current-page {
+		display: none;
+	}
+	nav ul li a {
+		display: block;
+		padding: var(--base-horizontal-padding);
+		color: var(--black);
+		text-decoration: none;
+	}
 }
 /* #endregion */
 
