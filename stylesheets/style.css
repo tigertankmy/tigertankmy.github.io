@@ -9,7 +9,7 @@ html {
 	--box-shadow-colour: #22222212;
 
 	/* font size of the first, big, serif "T" in the text logo, to be used when the width of the screen matters */
-	--base-width: 12rem;
+	--base-width: min(12rem, 17vw);
 	/* font size of normal text */
 	--base-font-size: 1.2rem;
 	/* thickness of the border between page sections */
@@ -17,11 +17,6 @@ html {
 
 	/* minimum distance between the left edge of the screen to text */
 	--base-horizontal-padding: calc(var(--base-width) * 0.5);
-}
-@media (width <= 825px) {
-	html {
-		--base-width: 16vw;
-	}
 }
 
 body {
@@ -47,64 +42,50 @@ section.background-gradient {
 	background: linear-gradient(135deg,rgba(255, 190, 2, 0.35) 0%, rgba(255, 251, 255, 1) 40%, rgba(255, 251, 255, 1) 60%, rgba(39, 166, 98, 0.35) 100%);
 }
 /* #region h1 */
-#h1-section {
-	padding-top: 0;
-
-	/* text-align: center; */
-}
 h1 {
-	display: inline-block;
-	margin: 0;
-
-	/* text-align: left; */
+	display: grid;
+	grid-template-areas:
+		"first-letter title-after-first-letter image-logo"
+		"first-letter subtitle image-logo";
+	grid-template-rows: calc(var(--base-width) * 0.6);
+	width: fit-content;
+	
 	text-wrap: nowrap;
-
-	font-weight: 900;
+	font-family: Montserrat, sans-serif;
 }
 #h1-first-letter {
-	position: relative;
-	top: calc(var(--base-width) * 0.34);
+	grid-area: first-letter;
+	width: fit-content;
+
+	line-height: 1.07;
 
 	font-size: var(--base-width);
-	font-family: Gelasio;
+	font-family: Gelasio, serif;
 }
-#h1-title-after-first-letter {	
+#h1-title-after-first-letter {
+	grid-area: title-after-first-letter;
+	width: fit-content;
+
 	text-transform: uppercase;
-	font-family: Montserrat;
+	font-weight: 900;
 	font-size: calc(var(--base-width) * 0.5);
 }
-/* so that "Student Entrepreneur Competition" is on a new line */
-#h1-title-after-first-letter::after{
-	content: "";
-	display: block;
-}
 #h1-subtitle {
-	position: relative;
-	left: calc(var(--base-width) * 0.7);
-	bottom: calc(var(--base-width) * 0.5);
+	grid-area: subtitle;
+	width: fit-content;
 
 	border-top: calc(var(--border-thickness) * 0.67) solid black;
 	padding-top: calc(var(--base-width) * 0.05);
 
 	text-transform: capitalize;
 	font-weight: 400;
-	font-family: Montserrat;
 	font-size: calc(var(--base-width) * 0.165);
 }
 #h1-image-logo {
-	display: inline-block;
+	grid-area: image-logo;
+	align-self: center;
 	width: var(--base-width);
 	padding-left: calc(var(--base-width) * 0.1);
-	position: relative;
-	bottom: calc(var(--base-width) * 0.48);
-}
-@media (width < 825px) {
-	#h1-subtitle {
-		bottom: calc(var(--base-width) * 0.7);
-	}
-	#h1-image-logo {
-		bottom: calc(var(--base-width) * 0.65);
-	}
 }
 
 #motto, #summary {
@@ -118,6 +99,7 @@ h1 {
 #summary {
 	font-size: var(--base-font-size);
 }
+/* endregion */
 
 .button-link {
 	display: inline-block;
@@ -133,7 +115,6 @@ h1 {
 	background-color: var(--black);
 	color: var(--white);
 }
-/* #endregion */
 
 ul.box-list {
 	list-style-type: none;
