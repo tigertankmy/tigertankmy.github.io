@@ -2,8 +2,8 @@ const NAVIGATION_LINKS = {
 	"/": [
 		"Home",
 	],
-	"/registration": [
-		"Registration",
+	"/competition": [
+		"Competition",
 	],
 	"/resources": [
 		"Resources",

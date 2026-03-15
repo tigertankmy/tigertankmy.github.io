@@ -36,7 +36,7 @@ p {
 ol > li:not(:first-child) {
 	margin-top: 1em;
 }
-ol > li > ul > li:first-child {
+ol > li > ul:not(.box-list) > li:first-child {
 	margin-top: 0.5em;
 }
 ol ul {
@@ -68,9 +68,6 @@ h3 {
 h4 {
 	font-weight: 700;
 	font-size: var(--base-font-size);
-}
-.note::before {
-	content: "*";
 }
 .note {
 	font-size: 0.8em;

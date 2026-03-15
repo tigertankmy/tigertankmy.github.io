@@ -87,8 +87,8 @@ nav, nav * {
 .home-icon {
 	content: url("../assets/icons/navigation/black/home_24dp_222222_FILL0_wght400_GRAD0_opsz24.svg");
 }
-.registration-icon {
-	content: url("../assets/icons/navigation/black/checkbook_24dp_222222_FILL0_wght400_GRAD0_opsz24.svg");
+.competition-icon {
+	content: url("../assets/icons/navigation/black/podium_24dp_222222_FILL0_wght400_GRAD0_opsz24.svg");
 }
 .resources-icon {
 	content: url("../assets/icons/navigation/black/books_movies_and_music_24dp_222222_FILL0_wght400_GRAD0_opsz24.svg");
