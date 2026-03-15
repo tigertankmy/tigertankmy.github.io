@@ -12,7 +12,7 @@ const NAVIGATION_LINKS = {
 		"FAQ",
 	],
 	"/sponsors-and-partners": [
-		"Sponsors & partners",
+		"Sponsors & Partners",
 	],
 };
 

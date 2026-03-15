@@ -7,7 +7,7 @@
 		"first-letter subtitle image-logo";
 	grid-template-rows: 0.6em;
 	width: fit-content;
-	
+
 	text-wrap: nowrap;
 	font-family: Montserrat, sans-serif;
 }
@@ -19,7 +19,6 @@ h1.competition-logo-container {
 }
 .competition-logo-container > .text-logo-first-letter {
 	grid-area: first-letter;
-	width: fit-content;
 
 	line-height: 1.07;
 
@@ -28,7 +27,6 @@ h1.competition-logo-container {
 }
 .competition-logo-container > .text-logo-title-after-first-letter {
 	grid-area: title-after-first-letter;
-	width: fit-content;
 
 	text-transform: uppercase;
 	font-weight: 900;
@@ -36,7 +34,6 @@ h1.competition-logo-container {
 }
 .competition-logo-container > .text-logo-subtitle {
 	grid-area: subtitle;
-	width: fit-content;
 
 	border-top: calc(var(--border-thickness) * 0.67) solid black;
 	/* remember that em is only relative to the font size of the parent element when used for font-size, which means that for padding em is relative to the font size of this element */

@@ -2,42 +2,72 @@ footer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: calc(var(--base-horizontal-padding) / 2) var(--base-horizontal-padding);
+	padding: calc(var(--base-horizontal-padding) / 4) var(--base-horizontal-padding);
 	background-color: var(--grey);
 	color: var(--black);
 
+	gap: calc(var(--base-horizontal-padding) / 4) calc(var(--base-horizontal-padding) / 2);
+
 	/* 1rem, since --base-font-size is 1.2rem */
 	font-size: calc(var(--base-font-size) * 0.83);
-	
-	@media (width < 1110px) {
+
+	/* @media (width < 1110px) {
 		display: block;
-	}
+	} */
 }
 
 .footer-heading {
 	display: block;
-	margin: 1rem 0;
+	margin: 1em 0;
 	text-transform: uppercase;
 	font-family: Montserrat;
 	font-weight: 500;
 }
-.organisation-logo {
-	display: flex;
-	align-items: center;
+.organisation-logo-container {
+	display: grid;
+	grid-template-areas:
+		"first-letter title-after-first-letter image-logo"
+		"first-letter subtitle image-logo";
+	grid-template-rows: 1.2em;
+	width: fit-content;
+
+	font-size: var(--base-font-size);
 }
-.organisation-logo > .text-logo-first-letter {
+.organisation-logo-container > .text-logo-first-letter {
+	grid-area: first-letter;
+
+	line-height: 1;
 	font-family: Gelasio;
-	font-size: 1.4rem;
+	font-size: 2.6em;
+	font-weight: 700;
 }
-.organisation-logo > .text-logo-after-first-letter {
+.organisation-logo-container > .text-logo-after-first-letter {
+	grid-area: title-after-first-letter;
+
+	text-transform: uppercase;
 	font-weight: 900;
 }
-.organisation-logo > .text-logo-after-first-letter > .text-logo-malaysia {
+.organisation-logo-container > .text-logo-subtitle {
+	grid-area: subtitle;
+
+	border-top: calc(var(--border-thickness) * 0.33) solid black;
+
+	/* text-transform: capitalize; */
+	text-transform: uppercase;
 	font-weight: 500;
+	/* font-family: monospace; */
+	font-size: 0.8em;
+	letter-spacing: 0.28em;
 }
-.organisation-logo > .image-logo {
-	width: 4rem;
-	margin-left: 0.5rem;
+.organisation-logo-container > .image-logo {
+	grid-area: image-logo;
+	align-self: center;
+	width: 3em;
+	margin-left: 0.3em;
+}
+
+#footer-intro-container > div:last-child {
+	padding-top: 0.5em;
 }
 
 address {
