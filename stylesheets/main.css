@@ -5,8 +5,8 @@ html {
 	--green: #27A662;
 	--grey: #F2F2F2;
 	
-	--box-background-colour: #FFFBFFCC;
-	--box-shadow-colour: #22222212;
+	--box-background-colour: #FFFBFF;
+	--box-shadow-colour: #22222233;
 
 	/* font size of the first, big, serif "T" in the text logo, to be used when the width of the screen matters */
 	--base-width: min(12rem, 17vw);
@@ -29,7 +29,19 @@ body {
 }
 a {
 	color: var(--green);
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 0.1em;
+
+	transition-duration: 0.3s;
 }
+a:hover {
+	filter: brightness(130%);
+	background-size: 0 0.1em;
+}
+
 p {
 	line-height: 1.4;
 }
@@ -50,12 +62,14 @@ section {
 section.background-gradient {
 	background: linear-gradient(135deg,rgba(255, 190, 2, 0.35) 0%, rgba(255, 251, 255, 1) 40%, rgba(255, 251, 255, 1) 60%, rgba(39, 166, 98, 0.35) 100%);
 }
+section > .text-container {
+	/* maximum of 80 characters per line, based on https://www.w3.org/WAI/tutorials/page-structure/styling/#line-length */
+	max-width: 80ch;
+}
 
 h1 {
 	font-size: min(16vw, 4.2em);
 	font-weight: 400;
-	/* text-transform: uppercase; */
-	/* font-family: Montserrat, sans-serif; */
 }
 h2 {
 	font-weight: 600;
@@ -86,43 +100,22 @@ h4 {
 	font-size: var(--base-font-size);
 }
 
-.button-link {
-	display: inline-block;
-	padding: calc(var(--base-font-size) * 0.67) calc(var(--base-font-size) * 1.33);
-	background-color: var(--yellow);
-	color: var(--black);
-
-	text-decoration: none;
-	font-size: var(--base-font-size);
-	transition-duration: 400ms;
-}
-.button-link:hover {
-	background-color: var(--black);
-	color: var(--white);
-}
 
 ul.box-list {
 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 	justify-content: space-between;
 	gap: var(--base-font-size);
 
 	padding-left: 0;
 	list-style-type: none;
 }
-ul.box-list.flex-wrap {
-	flex-wrap: wrap;
-}
-ul.box-list.justify-content-flex-start {
-	justify-content: flex-start;
-}
-ul.box-list.children-flex-grow > li {
-	flex-grow: 1;
-}
-ul.box-list li {
+ul.box-list > li {
 	display: block;
 	padding: calc(var(--base-font-size) * 2);
 	background-color: var(--box-background-colour);
-	box-shadow: var(--box-shadow-colour) 0 1rem 4rem 0;
+	box-shadow: var(--box-shadow-colour) 0 0.4rem 1.6rem 0;
 }
 ul.box-list h3, ul.box-list h4 {
 	margin-top: 0;
@@ -130,14 +123,15 @@ ul.box-list h3, ul.box-list h4 {
 ul.box-list p {
 	margin: 0;
 }
-ul#core-philosophy-list > li > h3 {
-	display: flex;
-	align-items: flex-end;
+ul.box-list.horizontal {
+	flex-direction: row;
 }
+ul.box-list.horizontal > li {
+	flex-grow: 1;
+}
+
 ul#core-philosophy-list > li > h3::before {
 	margin-right: calc(var(--base-font-size) * 0.5);
-	position: relative;
-	top: calc(var(--base-font-size) * 0.15);
 }
 ul#core-philosophy-list > li#accessibility > h3::before {
 	content: url("../assets/icons/accessibility_new_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg")
